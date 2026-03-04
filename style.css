@@ -1,0 +1,293 @@
+:root {
+    --taupe: #ab9b8e;
+    --slate: #8690a2;
+    --mist: #bdd1d3;
+    --sage: #e0decd;
+    --text-dark: #4a4a4a;
+}
+
+body {
+    background-color: var(--sage);
+    color: var(--text-dark);
+    font-family: 'Quicksand', 'Segoe UI', sans-serif; /* Soft, rounded font */
+    margin: 0;
+    padding: 0;
+}
+
+/* Rounded Navigation */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: var(--slate);
+    margin: 20px;
+    border-radius: 50px; /* pill shape */
+    color: white;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    margin: 0;
+}
+
+.main-nav a {
+    color: var(--sage);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background-color: var(--taupe);
+    color: white;
+}
+
+/* Profiles & Sections */
+.container {
+    padding: 2rem 5%;
+}
+
+.profile-header {
+    background: var(--mist);
+    padding: 3rem;
+    border-radius: 40px; /* Soft corners */
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.author-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; /* Circular */
+    border: 8px solid var(--sage);
+    object-fit: cover;
+}
+
+/* Masonry Grid with Soft Edges */
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+
+.grid-item {
+    background: white;
+    border-radius: 30px; /* Rounded images */
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Forms & Buttons */
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid var(--mist);
+    border-radius: 15px;
+    background: var(--sage);
+}
+
+.submit-btn, .collapsible {
+    background-color: var(--taupe);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer-nav {
+    background-color: var(--slate);
+    color: white;
+    padding: 3rem;
+    border-radius: 50px 50px 0 0;
+    text-align: center;
+}
+/* Previous colors/nav styles remain the same... */
+
+.gallery-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--mist);
+    padding: 40px;
+    border-radius: 40px;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.header-art {
+    max-width: 40%;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+}
+
+.collapsible-content.active {
+    opacity: 1;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-auto-rows: 180px;
+    grid-auto-flow: dense; /* The "magic" property for puzzle fitting */
+    gap: 20px;
+    padding: 30px 0;
+}
+
+.grid-item {
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: var(--mist);
+}
+
+/* Wide and Tall Variations */
+.grid-item.wide { grid-column: span 2; }
+.grid-item.tall { grid-row: span 2; }
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}/* Color Palette Refresher: 
+   Taupe: #ab9b8e | Slate: #8690a2 | Mist: #bdd1d3 | Sage: #e0decd 
+*/
+
+.main-nav {
+    /* Position fixed or sticky makes the glass effect visible during scroll */
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+    
+    /* The Glass Effect */
+    background: rgba(134, 144, 162, 0.7); /* Slate Blue with 70% opacity */
+    backdrop-filter: blur(12px); /* Frosted blur */
+    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    
+    border: 1px solid rgba(224, 222, 205, 0.3); /* Subtle light border */
+    margin: 0 auto 30px auto;
+    width: 90%;
+    max-width: 1100px;
+    border-radius: 50px;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #f4f3ee; /* Slightly brighter for contrast on glass */
+    padding: 10px 22px;
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+.main-nav a:hover, .main-nav a.active {
+    background: rgba(171, 155, 142, 0.9); /* Taupe with glass feel */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}/* Navigation Hover Styling */
+.main-nav ul li a, 
+.footer-links a {
+    position: relative;
+    display: inline-block;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy soft transition */
+}
+
+/* The Hover State for Main Nav */
+.main-nav ul li a:hover {
+    background-color: rgba(224, 222, 205, 0.2); /* Soft highlight using #e0decd */
+    transform: translateY(-2px) scale(1.05);
+    color: #ffffff !important;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Active Page Indicator */
+.main-nav ul li a.active {
+    background-color: var(--taupe);
+    color: white !important;
+    box-shadow: 0 4px 12px rgba(171, 155, 142, 0.4);
+}
+
+/* Footer Navigation Hover */
+.footer-links a {
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.footer-links a:hover {
+    color: var(--mist) !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+/* Interactive Magnetic Feel (Optional refinement) */
+.main-nav ul li a:active {
+    transform: scale(0.95);
+}
+/* Page Load Animation */
+body {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInPage 0.8s ease-out forwards;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay for Gallery Items */
+/* This makes the grid items pop in one after another */
+.grid-item {
+    opacity: 0;
+    animation: fadeInItem 0.5s ease-out forwards;
+}
+
+@keyframes fadeInItem {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Staggered loading: First 5 items pop in slightly slower */
+.grid-item:nth-child(1) { animation-delay: 0.1s; }
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }
+.grid-item:nth-child(4) { animation-delay: 0.4s; }
+.grid-item:nth-child(5) { animation-delay: 0.5s; }
